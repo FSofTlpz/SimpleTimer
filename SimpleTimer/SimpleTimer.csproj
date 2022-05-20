@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <NoWarn>1701;1702;IDE1006</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TimeWheelView.xaml1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Audio\Ding.mp3" />
+    <None Remove="Audio\Glocke.mp3" />
+    <None Remove="Audio\Glocke 2.mp3" />
+    <None Remove="Audio\Horn.mp3" />
+    <None Remove="Audio\Klingel.mp3" />
+    <None Remove="Audio\Klingel 2.mp3" />
+    <None Remove="Audio\Lied.mp3" />
+    <None Remove="Audio\Prometheus.mp3" />
+    <None Remove="Audio\Schlaflied.mp3" />
+    <None Remove="Audio\Sirene.mp3" />
+    <None Remove="Audio\Teekessel.mp3" />
+    <None Remove="Audio\Wecker.mp3" />
+    <None Remove="Audio\Weinglas.mp3" />
+    <None Remove="Audio\Windspiel.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Audio\Ding.mp3" />
+    <EmbeddedResource Include="Audio\Glocke.mp3" />
+    <EmbeddedResource Include="Audio\Glocke 2.mp3" />
+    <EmbeddedResource Include="Audio\Horn.mp3" />
+    <EmbeddedResource Include="Audio\Klingel.mp3" />
+    <EmbeddedResource Include="Audio\Klingel 2.mp3" />
+    <EmbeddedResource Include="Audio\Lied.mp3" />
+    <EmbeddedResource Include="Audio\Prometheus.mp3" />
+    <EmbeddedResource Include="Audio\Schlaflied.mp3" />
+    <EmbeddedResource Include="Audio\Sirene.mp3" />
+    <EmbeddedResource Include="Audio\Teekessel.mp3" />
+    <EmbeddedResource Include="Audio\Wecker.mp3" />
+    <EmbeddedResource Include="Audio\Weinglas.mp3" />
+    <EmbeddedResource Include="Audio\Windspiel.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FSofTUtils.Xamarin\FSofTUtils.Xamarin.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="InfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TimerConfig.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="VolumePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WheelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

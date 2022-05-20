@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.11" package="com.fsoft.simpletimer" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="26" android:targetSdkVersion="30" />
+	<application android:label="Kurzzeitwecker" android:theme="@style/MainTheme" android:icon="@mipmap/icon" android:requestLegacyExternalStorage="true"></application>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+</manifest>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleTimer.InfoPage"
+             Title="Info">
+   <ContentPage.Resources>
+      <ResourceDictionary>
+         <Style x:Key="MyLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="FontSize" Value="Medium"/>
+         </Style>
+
+         <Style x:Key="SpanStd" TargetType="Span">
+            <Setter Property="TextColor" Value="Blue"/>
+         </Style>
+
+         <Style x:Key="SpanBold" TargetType="Span">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+         </Style>
+
+      </ResourceDictionary>
+   </ContentPage.Resources>
+   <ContentPage.Content>
+      <ScrollView Orientation="Vertical"
+                  BackgroundColor="LightBlue">
+         <StackLayout Margin="5">
+            <Label Style="{StaticResource MyLabel}" >
+               <Label.FormattedText>
+                  <FormattedString>
+                     <Span Text="Es können beliebig viele Wecker erzeugt werden, die jeweils, auch mehrfach, mit einen Fingertip auf die"/>
+                     <Span Text=" Zeitangabe " Style="{StaticResource SpanBold}" />
+                     <Span Text="gestartet werden können."/>
+                  </FormattedString>
+               </Label.FormattedText>
+            </Label>
+
+            <Label Style="{StaticResource MyLabel}" >
+               <Label.FormattedText>
+                  <FormattedString>
+                     <Span Text="Nach einem Fingertip auf den"/>
+                     <Span Text=" Namen " Style="{StaticResource SpanBold}" />
+                     <Span Text="eines Weckers kann man die Einstellungen dieses Weckers ändern."/>
+                  </FormattedString>
+               </Label.FormattedText>
+            </Label>
+
+            <Label Style="{StaticResource MyLabel}" >
+               <Label.FormattedText>
+                  <FormattedString>
+                     <Span Text="Durch einen Fingertip auf einen"/>
+                     <Span Text=" Pfeil rechts neben dem Namen " Style="{StaticResource SpanBold}" />
+                     <Span Text="eines Weckers kann man die Reihenfolge in der Liste verändern."/>
+                  </FormattedString>
+               </Label.FormattedText>
+            </Label>
+
+            <Label Style="{StaticResource MyLabel}" >
+               <Label.FormattedText>
+                  <FormattedString>
+                     <Span Text="Mit"/>
+                     <Span Text=" Wischen nach rechts " Style="{StaticResource SpanBold}" />
+                     <Span Text="eines Weckernamens kann man den Wecker löschen."/>
+                  </FormattedString>
+               </Label.FormattedText>
+            </Label>
+
+            <Label Style="{StaticResource MyLabel}" >
+               <Label.FormattedText>
+                  <FormattedString>
+                     <Span Text="Die Lautstärke des Weckertons ist die Lautstärke die vom"/>
+                     <Span Text=" Smartphon " Style="{StaticResource SpanBold}" />
+                     <Span Text="für den Wecker u.a. Alarme verwendet wird."/>
+                  </FormattedString>
+               </Label.FormattedText>
+            </Label>
+
+         </StackLayout>
+      </ScrollView>
+   </ContentPage.Content>
+</ContentPage>

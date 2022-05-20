@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleTimer.VolumePage"
+             Title="Weckerlautstärke">
+   <ContentPage.Content>
+      <StackLayout BackgroundColor="LightBlue"
+                   Padding="5">
+         <Frame CornerRadius="10"
+                HasShadow="True"
+                BackgroundColor="CornflowerBlue"
+                VerticalOptions="CenterAndExpand">
+            <Slider x:Name="sliderVolume"
+                    Minimum="0"
+                    Maximum="1"
+                    FlowDirection="LeftToRight"
+                    Margin="10"
+                    ThumbColor="DarkSlateBlue"
+                    MinimumTrackColor="DarkBlue"
+                    ValueChanged="sliderVolume_ValueChanged"/>
+         </Frame>
+      </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

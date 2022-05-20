@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fux="clr-namespace:FSofTUtils.Xamarin.Control;assembly=FSofTUtils.Xamarin"
+             x:Class="SimpleTimer.TimerConfig"
+             x:Name="this"
+             BackgroundImageSource="mybackground.png">
+   <ContentPage.Resources>
+      <ResourceDictionary>
+         <Style x:Key="PropText" TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+         </Style>
+      </ResourceDictionary>
+   </ContentPage.Resources>
+
+   <ContentPage.Content>
+      <StackLayout x:Name="MyStackLayout">
+
+         <Grid Padding="5">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="10*" />
+               <ColumnDefinition Width="25*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" 
+                   Text="Weckername:" 
+                   Style="{StaticResource PropText}"/>
+            <Entry Grid.Row="0" Grid.Column="1" 
+                   x:Name="EntryName" 
+                   FontSize="Medium" 
+                   Text="{Binding TimerName, Source={x:Reference this}}"
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="Center"/>
+
+            <Label Grid.Row="1" Grid.Column="0" 
+                   Text="Dauer:" 
+                   Style="{StaticResource PropText}"/>
+            <Frame Grid.Row="1" Grid.Column="1" 
+                   Padding="5" 
+                   HorizontalOptions="Start" 
+                   BackgroundColor="#2080FF" 
+                   CornerRadius="5">
+               <fux:TimeWheelView x:Name="TimeWheel"
+                                  BackgroundColor="LightGray"
+                                  BackColor="LightGray"
+                                  ItemColor="White"
+                                  HorizontalOptions="Start"
+                                  ControlWidth="250"
+                                  ControlHeight="70"
+                                  ItemFontSize="20"/>
+            </Frame>
+
+            <Label Grid.Row="2" Grid.Column="0" 
+                   Text="Ton:" 
+                   Style="{StaticResource PropText}"/>
+
+            <Frame Grid.Row="2" Grid.Column="1"
+                   CornerRadius="10"
+                   BorderColor="#2080FF" 
+                   BackgroundColor="#2080FF" 
+                   HorizontalOptions="Start"
+                   Padding="0"
+                   Margin="0">
+               <Frame CornerRadius="5"
+                      HasShadow="True"
+                      BorderColor="#A0E0FF" 
+                      BackgroundColor="#A0E0FF"
+                      HorizontalOptions="Start"
+                      Padding="10,0,10,0"
+                      Margin="5">
+                  <Label Grid.Row="2" Grid.Column="0" 
+                         Text="{Binding SoundTitle, Source={x:Reference this}}"
+                         Style="{StaticResource PropText}">
+                  </Label>
+               </Frame>
+               <Frame.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="ButtonSound_Clicked"/>
+               </Frame.GestureRecognizers>
+            </Frame>
+
+         </Grid>
+
+         <Label Text="" />
+
+         <Button Text="speichern" 
+                 Clicked="ButtonSave_Clicked"
+                 BackgroundColor="#A0E0FF"
+                 HorizontalOptions="Center"/>
+
+      </StackLayout>
+   </ContentPage.Content>
+</ContentPage>
